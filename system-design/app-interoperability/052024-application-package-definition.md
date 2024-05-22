@@ -25,13 +25,12 @@ metadata:
       name: Northstar Industrial Applications
       site: http://northstar-ida.com
 sources:
-  helm:
-   - name: hello-world
-     type: helm.v3
-     properties:  
-       repository: oci://northstarida.azurecr.io/charts/hello-world
-       revision: 1.0.1
-       wait: true
+  - name: hello-world
+    type: helm.v3
+    properties:  
+      repository: oci://northstarida.azurecr.io/charts/hello-world
+      revision: 1.0.1
+      wait: true
 minimumResourceRequirements:
   cpu: 0.5
   memory: 16384
@@ -93,25 +92,23 @@ metadata:
       name: Northstar Industrial Applications
       site: http://northstar-ida.com
 sources:
-  helm:
-    - name: digitron-orchestrator
-      type: helm.v3
-      properties:
-        repository: oci://northstarida.azurecr.io/charts/northstarida-digitron-orchestrator
-        revision: 1.0.9
-        wait: true
-    - name: database-services
-      type: helm.v3
-      properties: 
-        repository: oci://quay.io/charts/realtime-database-services
-        revision: 2.3.7
-        wait: true
-  docker:
-    - name: digitron-orchestrator-docker
-      type: docker-compose
-      properties:
-        packageLocation: https://northsitarida.com/digitron/docker/digitron-orchestrator.tar.gz
-        keyLocation: https://northsitarida.com/digitron/docker/public-key.asc
+  - name: digitron-orchestrator
+    type: helm.v3
+    properties:
+      repository: oci://northstarida.azurecr.io/charts/northstarida-digitron-orchestrator
+      revision: 1.0.9
+      wait: true
+  - name: database-services
+    type: helm.v3
+    properties: 
+      repository: oci://quay.io/charts/realtime-database-services
+      revision: 2.3.7
+      wait: true
+  - name: digitron-orchestrator-docker
+    type: docker-compose
+    properties:
+      packageLocation: https://northsitarida.com/digitron/docker/digitron-orchestrator.tar.gz
+      keyLocation: https://northsitarida.com/digitron/docker/public-key.asc
 minimumResourceRequirements:
   cpu: 0.5
   memory: 16384
